@@ -1,6 +1,6 @@
 {
   "name": "vuetify-confirm",
-  "version": "2.0.1.1",
+  "version": "2.0.2",
   "description": "Extends vuetify with confirm dialog",
   "scripts": {
     "build": "npm run build:module && npm run build:browser",
@@ -36,7 +36,7 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-vue": "^4.2.0",
-    "rollup-plugin-vue": "^3.0.0",
+    "rollup-plugin-vue": "^5.0.0",
     "vue": "^2.5.13",
     "vue-template-compiler": "^2.5.13",
     "vuetify": "^2.0.2"
