@@ -15,6 +15,7 @@ function Install (Vue, options = {}) {
       const cmp = new Ctor(Object.assign({}, {
         propsData: Object.assign({}, Vue.prototype.$confirm.options, options),
         destroyed: () => {
+          Vue.prototype[property].options.opened -= 1
           container.removeChild(cmp.$el)
           resolve(cmp.value)
         }
@@ -24,6 +25,14 @@ function Install (Vue, options = {}) {
   }
   
   function show (message, options = {}) {
+    const opened = Vue.prototype[property].options.opened || 0
+
+    if (opened > 0 && !options.stack) {
+      return;
+    }
+
+    Vue.prototype[property].options.opened = opened + 1
+
     options.message = message
     return createDialogCmp(options)
   }
